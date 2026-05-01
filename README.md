@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/images/icon.png" alt="halfcaf" width="180">
+  <img src="docs/images/icon-readme.png" alt="Halfcaf" width="220">
 </p>
 
-<h1 align="center">halfcaf</h1>
+<h1 align="center">Halfcaf</h1>
 
 <p align="center">
   Headless work mode for macOS. One menu bar click, and your Mac
@@ -49,12 +49,12 @@ When you walk away from your Mac:
   light up the room.
 
 When you come back, every captured value is restored. SIGKILL,
-crash, hard reboot — auto-restore on next launch reverses the
+crash, hard reboot, the auto-restore on next launch reverses the
 state. The CLI uses `IOPMAssertion` so the kernel handles the
 caffeination side under any termination.
 
 <p align="center">
-  <img src="docs/images/menu-disengaged.png" alt="halfcaf menu bar app" width="380">
+  <img src="docs/images/menu-disengaged.png" alt="Halfcaf menu bar app" width="380">
 </p>
 
 ## Why
@@ -67,8 +67,8 @@ The old workaround was hand-assembled state: caffeinate, plus
 manually dim brightness to zero, plus DND on, plus mute. Then
 remember to undo all of it.
 
-`halfcaf` collapses that into one declarative command (or one
-menu bar click) with a clean reverse on exit.
+Halfcaf collapses that into one declarative command (or one menu
+bar click) with a clean reverse on exit.
 
 The name is a barista term, half-caffeinated: full system
 caffeination, but display, audio, and notification stimulation
@@ -96,7 +96,7 @@ halfcaf --status              # show the active session
 
 ## Privacy
 
-halfcaf does not phone home. It has no telemetry, no analytics,
+Halfcaf does not phone home. It has no telemetry, no analytics,
 no crash reporter. It reads your display brightness, audio mute
 state, and the name of your current Focus mode at engage time,
 writes those values to
