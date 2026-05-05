@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-05-04
+
+Two new behaviors. CLI flags, bundle identifier, and state schema
+unchanged.
+
+### Added
+- **Wave overlay** in the menu bar app. While engaged, optionally
+  render a translucent stacked-ridge animation across each display
+  via a click-through borderless panel per `NSScreen` (drawn with
+  `Canvas` + `TimelineView`, ~48 stroked sine paths per screen,
+  multi-octave). Mutually exclusive with **Dim displays** since the
+  overlay needs the screen lit. New menu toggle, persisted in
+  `UserDefaults` under `halfcaf.overlay`. Lifecycle is driven from
+  the bar app: opens on engage success, closes on session end (CLI
+  exit, hotkey, manual disengage), and on app termination.
+
+### Changed
+- **Display power yields to the OS while the screen is locked.**
+  When `com.apple.screenIsLocked` fires (remote screen sharing,
+  manual lock, sleep with password, screensaver with password),
+  halfcaf now stops fighting display power: WakeWatcher pauses,
+  brightness restores to the captured value, and any held
+  `PreventUserIdleDisplaySleep` assertion is released. The lock
+  screen behaves normally — visible on input, idle-sleeps after the
+  OS display-sleep timeout, wakes on key/trackpad. The
+  `PreventUserIdleSystemSleep` assertion stays held the whole time
+  so background work keeps running. On unlock, halfcaf re-dims to 0
+  and re-arms the WakeWatcher regardless of whether the original
+  session was started with `--no-dim`, since being locked-out means
+  the user was actually away.
+
 ## [1.0.3] - 2026-05-02
 
 Bug fix.
