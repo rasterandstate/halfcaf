@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-05-11
+
+Localization. CLI flags, bundle identifier, and state schema
+unchanged.
+
+### Added
+- **Menu bar app localized to nine languages.** All user-facing
+  strings in `HalfcafBar.app` (menu items, toggles, settings, error
+  alerts, and the Shortcuts authorization prompt) now ship as a
+  String Catalog at
+  `Sources/halfcaf-bar/Resources/Localizable.xcstrings`
+  (`InfoPlist.xcstrings` covers `NSAppleEventsUsageDescription`). The
+  app picks up the user's preferred language automatically from
+  System Settings. Supported locales: English (en), Spanish (es),
+  French (fr), German (de), Italian (it), Japanese (ja), Korean
+  (ko), Simplified Chinese (zh-Hans), Brazilian Portuguese (pt-BR).
+  Catalog translations are seed-quality and welcome native-speaker
+  PRs. Adding a tenth language is purely a catalog edit; no code or
+  build-script changes required. The CLI (`halfcaf`) remains
+  English-only because its output is commonly grepped by scripts.
+
+### Changed
+- **`scripts/build-app.sh`** now compiles every `.xcstrings` in
+  `Sources/halfcaf-bar/Resources/` via `xcrun xcstringstool compile`
+  and drops the resulting `<lang>.lproj/*.strings` plists into
+  `HalfcafBar.app/Contents/Resources/`. `Info.plist` gains
+  `CFBundleDevelopmentRegion = en`.
+
 ## [1.0.4] - 2026-05-04
 
 Two new behaviors. CLI flags, bundle identifier, and state schema

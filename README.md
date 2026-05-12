@@ -33,7 +33,7 @@ brew install rasterandstate/tap/halfcaf
 ```
 
 Or grab the latest signed and notarized DMG directly from
-[downloads.halfcaf.app/halfcaf-1.0.4.dmg](https://downloads.halfcaf.app/halfcaf-1.0.4.dmg).
+[downloads.halfcaf.app/halfcaf-1.0.5.dmg](https://downloads.halfcaf.app/halfcaf-1.0.5.dmg).
 
 Requires **macOS 14 (Sonoma) or later** on **Apple Silicon**.
 
